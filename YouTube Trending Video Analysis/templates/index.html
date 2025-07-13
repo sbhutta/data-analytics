@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Trending Video Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Trending Video Analysis</h1>
+
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+
+        <form method="POST" id="analysisForm">
+            <label for="region">Select Region:</label>
+            <select name="region" id="region" required>
+                <option value="" disabled selected>Select a region</option>
+                <option value="US">United States</option>
+                <option value="PK">Pakistan</option>
+                <option value="IN">India</option>
+                <option value="GB">United Kingdom</option>
+                <option value="CA">Canada</option>
+                <option value="AU">Australia</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+                <option value="JP">Japan</option>
+                <option value="KR">South Korea</option>
+                </select>
+            <button id="analyzeBtn" type="submit">Analyze</button>
+            <div id="loadingSpinner" class="spinner" style="display: none"></div>
+        </form>
+    </div>
+    <script>
+        const analysisForm = document.getElementById("analysisForm");
+        const analyzeBtn = document.getElementById("analyzeBtn");
+        const spinner = document.getElementById("loadingSpinner");
+        const regionSelect = document.getElementById("region");
+
+        analysisForm.addEventListener("submit", (event) => {
+            // Basic validation: ensure a region is selected
+            if (regionSelect.value === "") {
+                return;
+            }
+            
+            // Show spinner
+            spinner.style.display = "inline-block";
+
+            // Disable button to prevent multiple clicks
+            analyzeBtn.disabled = true;
+            analyzeBtn.style.cursor = "not-allowed";
+            analyzeBtn.textContent = "Analyzing...";
+        });
+    </script>
+</body>
+</html>
