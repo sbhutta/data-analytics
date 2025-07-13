@@ -20,9 +20,13 @@ This project delivers the following benefits:
 Project Structure
 
 American Bankruptcy/
-├── american_bankruptcy.csv         # Cleaned CSV dataset for analysis
-├── American_Bankruptcy.ipynb       # Jupyter notebook containing analysis & visualizations
-├── American_Bankruptcy.html        # Exported HTML version of the notebook (if present)
-├── Read.me                         # README file (this file)
-├── .ipynb_checkpoints/             # Jupyter auto-generated checkpoint folder
-└── american_bankruptcy.csv~        # Backup/temporary folder
+├── american_bankruptcy.csv         
+
+├── American_Bankruptcy.ipynb       
+
+├── American_Bankruptcy.html       
+
+├── Read.me                         
+
+├── .ipynb_checkpoints/             
+└── american_bankruptcy.csv~     
